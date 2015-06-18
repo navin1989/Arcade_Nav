@@ -1,0 +1,141 @@
+<html>
+<head>
+<title>script.aculo.us examples</title>
+
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a:link, a:visited {
+    display: block;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #98bf21;
+    width: 166px;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a:hover, a:active {
+    background-color: #7A991A;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
+table th	{
+    background-color: black;
+    color: white;
+}
+</style>
+
+   <script type="text/javascript" 
+   src="javascript/lib/prototype.js"></script>
+   
+   <script type="text/javascript" 
+   src="javascript/src/scriptaculous.js"></script>
+   
+   <script type="text/javascript" 
+   src="javascript/src/effects.js"></script>
+   <script type="text/javascript">
+
+
+   function BUDEffect(element){
+       new Effect.toggle(element,'Blind', {duration:0.5});
+   }
+
+
+   </script>
+        <script>
+function startTime() {
+    var today=new Date();
+    var h=today.getHours();
+    var m=today.getMinutes();
+    var s=today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML = h+":"+m+":"+s;
+    var t = setTimeout(function(){startTime()},500);
+}
+
+function checkTime(i) {
+    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+</head>
+
+<div onclick="BUDEffect('nav')">
+     <img src="javascript/button.png" >
+</div>
+
+<br />
+
+
+
+
+<form>
+<div id="nav" onclick="AppearEffect(this);">
+    
+    <ul> 
+      <table style="width:206px;background-color:lightgreen">
+          <tr>
+            
+              <td> <h4 style="color:red"><q> Arcade Independence Square</q></h4></td>
+          </tr>
+      </table>
+  </ul>
+    
+    <ul> 
+      <table style="width:206px">
+          <tr>
+                   <body onload="startTime()">
+                   <td> <div id="txt"></div></td>
+          </tr>
+      </table>
+  </ul>
+    
+    
+ 
+ <table style="width:153px">
+     <tr>
+         <td>
+  Search:<br>
+  <input type="text">
+  <br>
+         </td>
+    </tr>
+   </table>
+<table style="width:150px">
+    <tr>
+        <td>    
+  Categories:
+ <ul>        
+  <li><a href="#Electronics">Electronics</a></li>
+  <li><a href="#Entertainment">Entertainment</a></li>
+  <li><a href="#Fashion">Fashion</a></li>
+  <li><a href="#Food & Consumables">Food & Consumables</a></li>
+</ul>
+    </td>
+    </tr>
+</table>  
+    <table style="width:153px">
+    <tr>
+        <td>    
+ 
+Your feedback:<br>
+  <input type="text">
+      </td>
+    </tr>
+</table>    
+</div>
+</form>
+</html>
